@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página Educativa - Matemáticas</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS -->
+    <script src="script.js" defer></script> <!-- Enlaza tu archivo JS -->
 </head>
 <body>
-    <h1>hola</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, voluptatum.</p>
+    <h1>Bienvenidos a la Sección de Matemáticas</h1>
+
+    <h2>Juego del Cuadro de Pitágoras</h2>
+    <table id="pitagoras-table" border="1">
+        <tr>
+            <th></th>
+            <!-- Generar los encabezados de la tabla (1-10) -->
+            <script>
+                for (let i = 1; i <= 10; i++) {
+                    document.write("<th>" + i + "</th>");
+                }
+            </script>
+        </tr>
+        <!-- Generar filas de la tabla -->
+        <script>
+            for (let i = 1; i <= 10; i++) {
+                document.write("<tr>");
+                document.write("<th>" + i + "</th>"); // Encabezado de fila
+                for (let j = 1; j <= 10; j++) {
+                    document.write("<td><input type='text' id='cell-" + i + "-" + j + "'></td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+    <button onclick="validarCuadro()">Validar</button>
+
+    <h2>Juego de Mayor o Menor</h2>
+    <div>
+        <span id="numero1"></span>
+        <span> ¿es mayor, menor o igual que </span>
+        <span id="numero2"></span>?
+    </div>
+    <button onclick="comprobar('mayor')">Mayor</button>
+    <button onclick="comprobar('menor')">Menor</button>
+    <button onclick="comprobar('igual')">Igual</button>
+
 </body>
 </html>
