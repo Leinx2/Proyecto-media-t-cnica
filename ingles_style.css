@@ -1,0 +1,201 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rojo {
+    color: #ff0000;
+}
+
+.azul {
+    color: #0000ff;
+}
+
+.amarillo {
+    color: #ffff00;
+}
+
+.verde {
+    color: #00ff00;
+}
+
+.naranja {
+    color: #ffaa00;
+}
+
+.morado {
+    color: #800080;
+}
+
+.negro {
+    color: #000000;
+}
+
+.white {
+    color: #ffffff;
+    text-decoration: #000000;
+}
+
+.imagen_colores {
+    display: block;
+    margin: 0 auto;
+}
+
+.imagen_numeros {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 425px;
+}
+
+/* Sección Teorías */
+.teorias .teoria {
+    margin-bottom: 15px;
+}
+
+.titulo-teoria {
+    background-color: #bccff8;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contenido-teoria {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.contenido-teoria img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sección Juegos */
+.juegos .juego-1, .juegos .juego-2 {
+    margin-top: 20px;
+}
+
+.palabra {
+    background-color: #e0f7fa; /* Color de fondo */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+    cursor: grab;
+    transition: background-color 0.3s;
+}
+
+.columna-derecha p {
+    background-color: #eae3d9; /* Color de fondo */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+    cursor: default; /* Cambiar el cursor para que no se arrastre */
+    transition: background-color 0.3s;
+}
+
+.columna-derecha p:hover {
+    background-color: #94a8f5; /* Color al pasar el mouse */
+}
+
+.cuadro_naranja:hover {
+    background-color: #ffa260;
+}
+
+.cuadro_azul:hover {
+    background-color: #4f6fff;
+}
+
+.cuadro_amarillo:hover {
+    background-color: #ffff74;
+}
+
+.cuadro_verde:hover {
+    background-color: #85ff85;
+}
+
+.cuadro_rojo:hover {
+    background-color: #ff4747;
+}
+
+.palabras-container {
+    display: flex;
+    justify-content: space-between; /* Coloca las columnas una al lado de la otra */
+    align-items: flex-start; /* Alinea las columnas al principio */
+}
+
+.columna-izquierda, .columna-derecha {
+    width: 45%; /* Ajusta el ancho si es necesario */
+    margin: 10px; /* Añade un margen */
+}
+
+.palabras-container p {
+    background-color: #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: grab;
+    margin-bottom: 10px;
+}
+
+.palabras span {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    cursor: grab;
+    border-radius: 5px;
+}
+
+.vacío {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    border: 1px solid #333;
+    background-color: #f0f0f0;
+    text-align: center;
+    cursor: pointer;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #eae3d9;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #94a8f5;
+}
+
+.titulo_juego {
+    text-align: center;
+}
+
