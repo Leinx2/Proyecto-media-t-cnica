@@ -1,4 +1,4 @@
-// Función para mostrar u ocultar la teoría
+
 function toggleTeoria(teoriaId) {
     const contenido = document.getElementById(`teoria-${teoriaId}`);
     if (contenido.style.display === "block") {
@@ -8,7 +8,7 @@ function toggleTeoria(teoriaId) {
     }
 }
 
-// Función para mostrar u ocultar la teoría
+
 function toggleTeoria(teoriaId) {
     const contenido = document.getElementById(`teoria-${teoriaId}`);
     if (contenido.style.display === "block") {
@@ -18,9 +18,9 @@ function toggleTeoria(teoriaId) {
     }
 }
 
-let palabrasUnidas = {}; // Asegúrate de que esta variable esté definida globalmente
+let palabrasUnidas = {}; 
 
-// Almacenar el texto original de las definiciones
+
 const definicionesOriginales = {
     "Rojo": "Red",   
     "Azul": "Blue",    
@@ -29,79 +29,75 @@ const definicionesOriginales = {
     "Naranja": "Orange"
 };
 
-// Arrastrar y soltar en Juego 1
+
 function startDrag(event) {
-    event.dataTransfer.setData("text", event.target.innerText); // Guarda la palabra actual (en español)
+    event.dataTransfer.setData("text", event.target.innerText); 
 }
 
 function allowDrop(event) {
-    event.preventDefault(); // Permitir el drop
+    event.preventDefault(); 
 }
 
 function drop(event) {
     event.preventDefault();
-    const palabra = event.dataTransfer.getData("text"); // Obtener la palabra arrastrada
+    const palabra = event.dataTransfer.getData("text"); 
     
-    // Cambiar el texto en la definición
     event.target.innerText = palabra; 
     
-    // Guardar la unión usando la palabra en español como valor y la palabra en inglés (data-correct) como clave
     const definicionCorrecta = event.target.getAttribute('data-correct'); 
     palabrasUnidas[definicionCorrecta] = palabra; 
 
-    // Desactivar la palabra en la columna izquierda
     document.querySelectorAll('.columna-izquierda .palabra').forEach(p => {
         if (p.innerText === palabra) {
-            p.setAttribute('draggable', 'false'); // Deshabilitar el arrastre
-            p.style.opacity = "0.5"; // Cambiar la opacidad para que sea menos visible
+            p.setAttribute('draggable', 'false'); 
+            p.style.opacity = "0.5"; 
         }
     });
 }
 
 function comprobarJuego1() {
     let respuestasCorrectas = 0;
-    const totalRespuestas = Object.keys(definicionesOriginales).length; // Número total de definiciones
+    const totalRespuestas = Object.keys(definicionesOriginales).length; 
 
-    // Verificar las respuestas
+
     for (const [palabraEspañol, palabraIngles] of Object.entries(definicionesOriginales)) {
-        // Comparar si la palabra en español corresponde a la palabra en inglés en el área de drop
+
         if (palabrasUnidas[palabraIngles] && palabrasUnidas[palabraIngles].trim().toLowerCase() === palabraEspañol.trim().toLowerCase()) {
-            respuestasCorrectas++; // Incrementar si la respuesta es correcta
+            respuestasCorrectas++; 
         }
     }
 
-    // Mensaje de resultados
+
     if (respuestasCorrectas === totalRespuestas) {
         alert("¡Todas las respuestas son correctas!");
     } else {
         alert(`Algunas respuestas son incorrectas. Tienes ${respuestasCorrectas} de ${totalRespuestas} correctas.`);
     }
 
-    // Reiniciar el juego
+
     reiniciarJuego();
 }
 
 function reiniciarJuego() {
-    palabrasUnidas = {}; // Limpiar las uniones
+    palabrasUnidas = {};
 
-    // Restablecer los textos de las definiciones
+
     document.querySelectorAll('.columna-derecha p').forEach(p => {
-        p.innerText = p.getAttribute('data-correct'); // Restaurar texto original de la definición
+        p.innerText = p.getAttribute('data-correct'); 
     });
 
-    // Restablecer los textos y estilos de las palabras en la columna izquierda
+
     document.querySelectorAll('.columna-izquierda .palabra').forEach(p => {
-        p.setAttribute('draggable', 'true'); // Asegurarse de que sean arrastrables de nuevo
-        p.style.opacity = "1"; // Restaurar la opacidad original
+        p.setAttribute('draggable', 'true'); 
+        p.style.opacity = "1";
     });
 }
 
 
-// Juego 2: Completar texto
 function dropWord(event) {
     event.preventDefault();
     const data = event.dataTransfer.getData("text");
-    event.target.innerText = data; // Coloca la palabra en el espacio vacío
+    event.target.innerText = data; 
 }
 
 function comprobarJuego2() {
@@ -122,7 +118,6 @@ function comprobarJuego2() {
         alert("Aún hay palabras incorrectas o espacios vacíos.");
     }
 
-    // Reiniciar el juego
     reiniciarJuego2();
 }
 
@@ -130,9 +125,8 @@ function reiniciarJuego2() {
     const vacios = document.querySelectorAll('.vacío');
     
     vacios.forEach(vacio => {
-        vacio.innerText = ""; // Limpiar el texto de los espacios vacíos
+        vacio.innerText = ""; 
     });
 
-    // Opcional: Si deseas que las palabras también vuelvan a su lugar original, puedes implementar esa lógica aquí.
 }
 

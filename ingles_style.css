@@ -99,7 +99,7 @@ section {
 }
 
 .palabra {
-    background-color: #e0f7fa; /* Color de fondo */
+    background-color: #e0f7fa; 
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
@@ -109,17 +109,17 @@ section {
 }
 
 .columna-derecha p {
-    background-color: #eae3d9; /* Color de fondo */
+    background-color: #eae3d9;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
     text-align: center;
-    cursor: default; /* Cambiar el cursor para que no se arrastre */
+    cursor: default; 
     transition: background-color 0.3s;
 }
 
 .columna-derecha p:hover {
-    background-color: #94a8f5; /* Color al pasar el mouse */
+    background-color: #94a8f5; 
 }
 
 .cuadro_naranja:hover {
@@ -144,13 +144,13 @@ section {
 
 .palabras-container {
     display: flex;
-    justify-content: space-between; /* Coloca las columnas una al lado de la otra */
-    align-items: flex-start; /* Alinea las columnas al principio */
+    justify-content: space-between; 
+    align-items: flex-start; 
 }
 
 .columna-izquierda, .columna-derecha {
-    width: 45%; /* Ajusta el ancho si es necesario */
-    margin: 10px; /* Añade un margen */
+    width: 45%; 
+    margin: 10px;
 }
 
 .palabras-container p {
